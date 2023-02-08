@@ -158,7 +158,7 @@ const Product = () => {
     const getSingleProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/products/find/${id}`
+          `${import.meta.env.VITE_BACKEND_URL}/products/find/${id}`
         );
         setProduct(response.data);
         console.log(response.data);

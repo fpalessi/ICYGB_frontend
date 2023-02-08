@@ -25,20 +25,21 @@ const Products = ({ brand, filter, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+  const getProducts = async () => {
+    try {
+      // fetching data from our backend
+      const response = await axios.get(
+        brand
+          ? `${import.meta.env.VITE_BACKEND_URL}/products?brand=${brand}`
+          : `${import.meta.env.VITE_BACKEND_URL}/products`
+      );
+      setProducts(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    const getProducts = async () => {
-      try {
-        // fetching data from our backend
-        const response = await axios.get(
-          brand
-            ? `http://localhost:5000/api/products?brand=${brand}`
-            : "http://localhost:5000/api/products"
-        );
-        setProducts(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     getProducts();
   }, [brand]);
 
