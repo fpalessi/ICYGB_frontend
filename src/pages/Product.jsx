@@ -18,6 +18,9 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 1080px) {
     flex-direction: column-reverse;
   }
+  @media only screen and (max-width: 1080px) {
+    padding: 30px;
+  }
 `;
 const ImageContainer = styled.div`
   flex: 1;
@@ -110,7 +113,7 @@ const StyledButton = styled.button`
   }
 `;
 const ButtonsContainer = styled.div`
-  width: 60%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -122,7 +125,7 @@ const ButtonCtn = styled.div`
   display: none;
 
   @media only screen and (max-width: 1080px) {
-    width: 60%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -192,9 +195,12 @@ const Product = () => {
             <StyledButton onClick={AddProductToCart}>
               AÑADIR ZAPATILLA
             </StyledButton>{" "}
+            <StyledButton onClick={() => navigate("/cart")}>
+              VER CARRITO
+            </StyledButton>
             <StyledButton onClick={() => navigate(-1)}>
               SEGUIR COMPRANDO
-            </StyledButton>
+            </StyledButton>{" "}
           </ButtonsContainer>
         </InfoContainer>
       </Wrapper>{" "}
@@ -210,6 +216,9 @@ const Product = () => {
           <StyledButton onClick={AddProductToCart}>
             AÑADIR ZAPATILLA
           </StyledButton>{" "}
+          <StyledButton onClick={() => navigate("/cart")}>
+            VER CARRITO
+          </StyledButton>
           <StyledButton onClick={() => navigate(-1)}>
             SEGUIR COMPRANDO
           </StyledButton>
