@@ -30,8 +30,8 @@ const Products = ({ brand, filter, sort }) => {
       // fetching data from our backend
       const response = await axios.get(
         brand
-          ? `${import.meta.env.VITE_BACKEND_URL}/products?brand=${brand}`
-          : `${import.meta.env.VITE_BACKEND_URL}/products`
+          ? `${import.meta.env.VITE_BACKEND_URL}/api/products?brand=${brand}`
+          : `${import.meta.env.VITE_BACKEND_URL}/api/products`
       );
       setProducts(response.data);
     } catch (error) {
