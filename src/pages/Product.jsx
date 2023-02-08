@@ -158,7 +158,7 @@ const Product = () => {
     const getSingleProduct = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/products/find/${id}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/find/${id}`
         );
         setProduct(response.data);
         console.log(response.data);
@@ -220,7 +220,6 @@ const Product = () => {
           <StyledButton onClick={AddProductToCart}>
             AÑADIR ZAPATILLA
           </StyledButton>{" "}
-          <ToastContainer />
           <StyledButton onClick={() => navigate(-1)}>
             SEGUIR COMPRANDO
           </StyledButton>
