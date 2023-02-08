@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import styled from "styled-components";
@@ -10,8 +9,6 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { addProduct } from "../features/cart/cartSlice";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Container = styled.div``;
 
@@ -149,12 +146,6 @@ const Product = () => {
 
   const dispatch = useDispatch();
 
-  const productAddedToast = () => {
-    toast.success("Producto añadido al carrito.", {
-      position: "top-center",
-    });
-  };
-
   useEffect(() => {
     const getSingleProduct = async () => {
       try {
@@ -172,7 +163,6 @@ const Product = () => {
 
   const AddProductToCart = () => {
     dispatch(addProduct({ ...product, qty, size }));
-    productAddedToast();
   };
 
   return (

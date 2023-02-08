@@ -14,9 +14,6 @@ import axiosRequest from "../config/axiosRequest";
 
 import { clearCart } from "../features/cart/cartSlice";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 20px;
@@ -161,11 +158,6 @@ const Cart = () => {
 
   const dispatch = useDispatch();
 
-  const clearCartToast = () =>
-    toast.warn("Vaciaste el carrito con éxito.", {
-      position: "top-center",
-    });
-
   const onToken = (token) => {
     setStripeToken(token);
   };
@@ -205,7 +197,6 @@ const Cart = () => {
           <TopButton
             onClick={() => {
               dispatch(clearCart(cart));
-              clearCartToast();
             }}
           >
             VACIAR CARRITO
