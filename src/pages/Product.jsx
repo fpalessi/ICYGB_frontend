@@ -192,7 +192,6 @@ const Product = () => {
             <StyledButton onClick={AddProductToCart}>
               AÑADIR ZAPATILLA
             </StyledButton>{" "}
-            <ToastContainer />
             <StyledButton onClick={() => navigate(-1)}>
               SEGUIR COMPRANDO
             </StyledButton>
