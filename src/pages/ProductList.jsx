@@ -77,7 +77,9 @@ const GoBackButton = styled.button`
     left: 0px;
   }
   @media only screen and (max-width: 360px) {
-    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: 200px;
   }
 `;
 
@@ -85,7 +87,8 @@ const ButtonCtn = styled.div`
   width: 90%;
   display: flex;
   @media only screen and (max-width: 360px) {
-    width: 50%;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
